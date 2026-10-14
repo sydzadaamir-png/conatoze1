@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<!-- ============================================================
+     NAYA PREVIEW CARD — READY HAI (title, description, image lag gayi)
+     ============================================================ -->
+<meta property="og:title" content="New Trending">
+<meta property="og:description" content="Join Now">
+<meta property="og:image" content="https://comatoze.vercel.app/preview.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="839">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:type" content="website">
+<!-- og:image: isi site ka preview.jpg (upar wala URL sahi hai) -->
+
+<!-- ============================================================
+     TWITTER / X PREVIEW CARD — X par ye card dikhega
+     (X pehle twitter: tags dekhta hai, warna og: tags use karta hai)
+     ============================================================ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="New Trending">
+<meta name="twitter:description" content="Join Now">
+<meta name="twitter:image" content="https://comatoze.vercel.app/preview.jpg">
+
+<!-- GOOGLE ANALYTICS: tumhara Measurement ID pehle se laga hai -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HG123BCKRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG123BCKRZ');
+</script>
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:100vw;height:100vh;overflow:hidden;position:relative;font-family:system-ui,-apple-system,sans-serif}
+  img.bg{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+  .cta{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);background:#1877f2;color:#fff;border:0;border-radius:999px;padding:16px 54px;font-size:20px;font-weight:700;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.35);white-space:nowrap}
+  .cta:active{transform:translateX(-50%) scale(.97)}
+</style>
+<link rel="preload" as="image" href="thumbnail.jpg">
+</head>
+
+<body>
+<img class="bg" src="thumbnail.jpg" alt="" fetchpriority="high" decoding="async">
+<button class="cta" id="go">Continue &#10148;</button>
+
+<script>
+// Yahan apna t.co link paste karo (neeche tareeqa likha hai).
+// t.co link banane ke liye: Twitter/X par apna ad smartlink tweet karo,
+// tweet mein jo t.co/... link bane use copy kar ke yahan paste karo.
+var SMART_LINK = 'https://t.co/GZDr7m2Hey';
+
+// AUTO-REDIRECT: page khulte hi 1 second baad khud smartlink par chala jayega.
+// Continue button backup hai — agar redirect kisi wajah se na chale to user
+// button daba kar ja sakta hai.
+setTimeout(function(){
+  try { gtag('event', 'auto_redirect'); } catch(e) {}
+  window.location.href = SMART_LINK;
+},1000);
+
+document.getElementById('go').addEventListener('click', function(){
+  try { gtag('event', 'cta_click'); } catch(e) {}
+  window.location.href = SMART_LINK;
+});
+</script>
+
+</body>
+</html>
